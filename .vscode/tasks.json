@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "Run SCons",
+      "command": "docker exec -t godot-ps2-compiler sh -c 'scons platform=ps2 -j8 target=debug'"
+    },
+    {
+      "type": "shell",
+      "label": "Run SCons Clean",
+      "command": "docker exec -t godot-ps2-compiler sh -c 'scons platform=ps2 --clean'"
+    },
+    {
+      "type": "shell",
+      "label": "Start docker container",
+      "command": "docker compose up -d"
+    },
+    {
+      "type": "shell",
+      "label": "Stop docker container",
+      "command": "docker compose down"
+    }
+  ]
+}
