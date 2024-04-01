@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+Import("env")
+
+files = [
+    "godot_ps2.cpp",
+    "file_access_ps2.cpp",
+    "dir_access_ps2.cpp",
+    "os_ps2.cpp"
+]
+
+prog = env.add_program("#bin/godot", files)
+build_target = env["target"]
+
+#env.Command(
+#    "#bin/switch_" + env["target"] + ".nro",
+#    prog,
+#    "/opt/devkitpro/tools/bin/elf2nro $SOURCE $TARGET --icon=platform/switch/icon.jpg --nacp=platform/switch/nacp_default.nacp --romfsdir=platform/switch/romfs",
+#)
